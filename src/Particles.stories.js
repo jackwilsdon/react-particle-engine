@@ -1,7 +1,7 @@
 import React from "react";
 import Particles from "./Particles";
 import { number, withKnobs } from "@storybook/addon-knobs";
-import { rain, snow } from "./presets";
+import { rain, snow, windyRain } from "./presets";
 
 export default {
   title: "Particles",
@@ -23,5 +23,14 @@ export const snowPreset = () => (
     particle={snow.Particle}
     create={snow.create}
     update={snow.update}
+  />
+);
+
+export const windyRainPreset = () => (
+  <Particles
+    quantity={number("Particles", 100, { min: 0 })}
+    particle={windyRain.Particle}
+    create={windyRain.create}
+    update={windyRain.update}
   />
 );
